@@ -4,8 +4,8 @@ require 'sinatra/base'
 class BookmarkManager < Sinatra::Base
 
   get '/' do
-    'Hello World'
+    erb :index
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
