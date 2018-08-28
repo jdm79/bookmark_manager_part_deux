@@ -8,7 +8,7 @@ I'd like to see a list of my bookmarks.
 ### Domain model
 
 ```
-BookmarkManager
+Bookmarks
     |
     |___ view_all
     |
