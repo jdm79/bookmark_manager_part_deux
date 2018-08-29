@@ -14,14 +14,24 @@ feature "bookmark list" do
   end
 end
 
-feature "add to bookmarks" do
-  scenario "returns bookmarks" do
-    connection = PG.connect(dbname: 'bookmark_manager_test')
+# feature "add to bookmarks" do
+#   scenario "returns bookmarks" do
+#     connection = PG.connect(dbname: 'bookmark_manager_test')
 
-    visit '/add_bookmark'
-    fill_in :url_box, with: "www.bloomberg.com"
-    click_on 'Submit'
-    expect(page).to have_content "www.bloomberg.com"
+#     visit '/add_bookmark'
+#     fill_in :url_box, with: "www.bloomberg.com"
+#     click_on 'Submit'
+#     expect(page).to have_content "www.bloomberg.com"
 
+#   end
+# end
+
+feature 'Adding a new bookmark' do
+  scenario 'A user can add a bookmark to Bookmark Manager' do
+    visit('/bookmarks/new')
+    fill_in('url', with: 'http://testbookmark.com')
+    click_button('Submit')
+
+    expect(page).to have_content 'http://testbookmark.com'
   end
 end
