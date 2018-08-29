@@ -6,7 +6,17 @@ describe Bookmark do
 
   describe ".all" do
     it "will return bookmarks" do
-      expect(Bookmark.all).to eq(["www.facebook.com", "www.google.com", "www.instagram.com", "www.imgur.com", "www.reddit.com"])
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+
+      connection.exec("INSERT INTO bookmarks (url) VALUES ('www.facebook.com');")
+      connection.exec("INSERT INTO bookmarks (url) VALUES ('www.google.com');")
+      connection.exec("INSERT INTO bookmarks (url) VALUES ('www.instagram.com');")
+
+      bookmarks = Bookmark.all
+
+      expect(bookmarks).to include("www.facebook.com")
+      expect(bookmarks).to include("www.google.com")
+      expect(bookmarks).to include("www.instagram.com")
     end
   end
 
