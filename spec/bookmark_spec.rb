@@ -6,7 +6,7 @@ describe Bookmark do
 
   describe ".all" do
     it "will return bookmarks" do
-      expect(Bookmark.all).to eq(["http://www.bbc.com", "http://www.google.com", "http://www.makers.tech"])
+      expect(Bookmark.all).to eq(["www.facebook.com", "www.google.com", "www.instagram.com", "www.imgur.com", "www.reddit.com"])
     end
   end
 
