@@ -8,11 +8,6 @@ I'd like to see a list of my bookmarks.
 ### Domain model
 
 ```
-Bookmarks
-    |
-    |___ view_all
-    |
-    |
-    |
+![Imgur](https://i.imgur.com/2IwA91w.jpg)
 
 ```
